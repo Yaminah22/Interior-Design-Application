@@ -15,6 +15,7 @@ public class SidePanelOpenClose : MonoBehaviour,IPointerClickHandler
     public GameObject cameraControlDefault;
     public GameObject cameraTopDown;
     public GameObject cameraFirstPerson;
+    public GameObject bottomPanel;
     
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -23,6 +24,7 @@ public class SidePanelOpenClose : MonoBehaviour,IPointerClickHandler
         {
             if (mainSidePanel.activeInHierarchy == false)
             {
+                bottomPanel.SetActive(true);
                 mainSidePanel.SetActive(true);
                 hiddenPanel.SetActive(false);
                 cameraControlView.SetActive(false);
@@ -45,6 +47,7 @@ public class SidePanelOpenClose : MonoBehaviour,IPointerClickHandler
         {
             if (cameraTopDown.activeInHierarchy == false)
             {
+                bottomPanel.SetActive(true);
                 cameraTopDown.SetActive(true);
                 cameraFirstPerson.SetActive(false);
                 cameraControlView.SetActive(false);
@@ -52,6 +55,7 @@ public class SidePanelOpenClose : MonoBehaviour,IPointerClickHandler
             }
             else if (cameraTopDown.activeInHierarchy == true)
             {
+               
                 cameraTopDown.SetActive(false);
                 cameraFirstPerson.SetActive(false);
                 cameraControlView.SetActive(true);
@@ -62,6 +66,7 @@ public class SidePanelOpenClose : MonoBehaviour,IPointerClickHandler
         {
             if (cameraFirstPerson.activeInHierarchy == false)
             {
+                bottomPanel.SetActive(false);
                 cameraTopDown.SetActive(false);
                 cameraFirstPerson.SetActive(true);
                 cameraControlView.SetActive(false);
@@ -69,6 +74,7 @@ public class SidePanelOpenClose : MonoBehaviour,IPointerClickHandler
             }
             else if (cameraFirstPerson.activeInHierarchy == true)
             {
+                bottomPanel.SetActive(true);
                 cameraTopDown.SetActive(false);
                 cameraFirstPerson.SetActive(false);
                 cameraControlView.SetActive(true);

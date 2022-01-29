@@ -39,10 +39,9 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         HandleMovementInput();
-      
+       
     }
-  
-    
+
     //Function for handling keyboard input for movement and zoom
     void HandleMovementInput()
     {

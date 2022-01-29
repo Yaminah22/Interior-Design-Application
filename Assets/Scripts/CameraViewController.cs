@@ -57,18 +57,7 @@ public class CameraViewController : MonoBehaviour
             }
 
         }
-        
-        if (Input.GetMouseButtonDown(1))
-        {
-            rotateStartPosition = Input.mousePosition;
-        }
-        if (Input.GetMouseButton(1))
-        {
-            rotateCurrentPosition = Input.mousePosition;
-            Vector3 difference = rotateStartPosition - rotateCurrentPosition;
-            rotateStartPosition = rotateCurrentPosition;
-            newRotation *= Quaternion.Euler(Vector3.up * -(difference.x / 5f));
-        }
+      
     }
 
     //Function for handling keyboard input for movement and zoom
